@@ -4,6 +4,7 @@ import { getServerSession } from "next-auth"
 import { authOptions } from "@/lib/auth"
 import { DashboardNav } from "@/components/dashboard-nav"
 import { UserNav } from "@/components/user-nav"
+import { ModeToggle } from "@/components/mode-toggle"
 
 export default async function DashboardLayout({
   children,
@@ -24,6 +25,7 @@ export default async function DashboardLayout({
             <h1 className="text-xl font-bold">Pizza Dashboard</h1>
           </div>
           <div className="flex items-center gap-4">
+            <ModeToggle />
             <UserNav user={session.user!} />
           </div>
         </div>
