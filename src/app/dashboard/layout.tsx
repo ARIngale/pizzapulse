@@ -2,6 +2,7 @@ import type React from "react"
 import { redirect } from "next/navigation"
 import { getServerSession } from "next-auth"
 import { authOptions } from "@/lib/auth"
+import { DashboardNav } from "@/components/dashboard-nav"
 import { UserNav } from "@/components/user-nav"
 
 export default async function DashboardLayout({
@@ -28,6 +29,9 @@ export default async function DashboardLayout({
         </div>
       </header>
       <div className="flex flex-1">
+        <aside className="hidden w-64 border-r bg-background md:block">
+          <DashboardNav />
+        </aside>
         <main className="flex-1 p-4 md:p-6">{children}</main>
       </div>
     </div>
